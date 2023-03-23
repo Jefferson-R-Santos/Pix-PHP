@@ -7,12 +7,12 @@ use \Mpdf\QrCode\QrCode;
 use \Mpdf\QrCode\Output;
 
 //Instancia principal do payload do pix
-$obPayload = (new Payload)->setPixKey('')
-                          ->setdescription('')
-                          ->setmerchantName('')
-                          ->setmerchantCity('')
-                          ->setamount('')
-                          ->settxid('');
+$obPayload = (new Payload)->setPixKey('12345678977')
+                          ->setdescription('sla doid')
+                          ->setmerchantName('Jeff Santos')
+                          ->setmerchantCity('Dubai')
+                          ->setamount('5.00')
+                          ->settxid('SIIU777');
 
 //Codigo de Pagamento pix
 $payloadQrCode = $obPayload->getPayload();
