@@ -7,7 +7,7 @@ use \Mpdf\QrCode\QrCode;
 use \Mpdf\QrCode\Output;
 
 //Instancia principal do payload do pix
-$obPayload = (new Payload)->setPixKey('12345678977')
+$obPayload = (new Payload)->setpixKey('12345678977')
                           ->setdescription('sla doid')
                           ->setmerchantName('Jeff Santos')
                           ->setmerchantCity('Dubai')
