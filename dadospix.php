@@ -7,12 +7,12 @@ use \Mpdf\QrCode\QrCode;
 use \Mpdf\QrCode\Output;
 
 //Instancia principal do payload do pix
-$obPayload = (new Payload)->setPixKey('eu7sou69foda')
-                          ->setdescription('Paga logo veaco')
-                          ->setmerchantName('Jeff Santos')
-                          ->setmerchantCity('Dubai')
-                          ->setamount('5')
-                          ->settxid('1');
+$obPayload = (new Payload)->setPixKey('')
+                          ->setdescription('')
+                          ->setmerchantName('')
+                          ->setmerchantCity('')
+                          ->setamount('')
+                          ->settxid('');
 
 //Codigo de Pagamento pix
 $payloadQrCode = $obPayload->getPayload();
