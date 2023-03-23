@@ -14,5 +14,7 @@ $obPayload = (new Payload)->setPixKey('')
 $payloadQrCode = $obPayload->getPayload();
 
 echo "<pre>";
-print_r($payloadQrCode)
+print_r($payloadQrCode);
+echo "<pre>";exit;
+
 ?>
