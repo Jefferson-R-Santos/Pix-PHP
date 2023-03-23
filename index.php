@@ -23,6 +23,9 @@ $image = (new Output\Png)->output($obQrCode,400);
 
 header('Content.Type: image/png');
 echo $image; 
+echo "<pre>";
+print_r($payloadQrCode);
+echo "<pre>";
 ?>
 <H1>Qr Code Pix</H1>
 <br>
