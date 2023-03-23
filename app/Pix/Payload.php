@@ -153,7 +153,7 @@ return $this->getValue(self::ID_ADDITIONAL_DATA_FIELD_TEMPLATE,$txid);
  */
 public function getPayload() {
 //Cria o Payload
-    $payload = $this->getValue(self::ID_PAYLOAD_FORMAT_INDICATOR,'01').
+    $Payload = $this->getValue(self::ID_PAYLOAD_FORMAT_INDICATOR,'01').
                $this->getMerchantAccountInformation(). $this->getValue(self::ID_MERCHANT_CATEGORY_CODE,'0000').
                $this->getValue(self::ID_TRANSACTION_CURRENCY,'986').
                $this->getValue(self::ID_TRANSACTION_AMOUNT,$this->amount).
@@ -163,25 +163,25 @@ public function getPayload() {
                $this->getAdditionalDataFieldTemplate() ;
     
 //Retorna o Payload + CRC16
-               return $payload.$this->getCRC16($payload);
+               return $Payload.$this->getCRC16($Payload);
 }
 
 /**
    * Método responsável por calcular o valor da hash de validação do código pix
    * @return string
    */
-  private function getCRC16($payload) {
+  private function getCRC16($Payload) {
     //ADICIONA DADOS GERAIS NO PAYLOAD
-    $payload .= self::ID_CRC16.'04';
+    $Payload .= self::ID_CRC16.'04';
 
     //DADOS DEFINIDOS PELO BACEN
     $polinomio = 0x1021;
     $resultado = 0xFFFF;
 
     //CHECKSUM
-    if (($length = strlen($payload)) > 0) {
+    if (($length = strlen($Payload)) > 0) {
         for ($offset = 0; $offset < $length; $offset++) {
-            $resultado ^= (ord($payload[$offset]) << 8);
+            $resultado ^= (ord($Payload[$offset]) << 8);
             for ($bitwise = 0; $bitwise < 8; $bitwise++) {
                 if (($resultado <<= 1) & 0x10000) $resultado ^= $polinomio;
                 $resultado &= 0xFFFF;
