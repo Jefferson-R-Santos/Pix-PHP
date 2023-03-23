@@ -27,7 +27,7 @@ echo "<pre>";
 print_r($payloadQrCode);
 echo "<pre>";
 ?>
-<H1>Qr Code Pix</H1>
+<h1>Qr Code Pix</h1>
 <br>
 <img src="data:image/png;base64, <?=base64_encode($image)?>">
 <br>
