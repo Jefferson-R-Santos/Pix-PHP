@@ -62,7 +62,7 @@ private $amount;
  * Metodo responsavel por definir valor de $pixKey
  * @param string $pixKey
  */
-public function setPixKey($pixKey){
+public function setpixKey($pixKey){
     $this->pixKey = $pixKey;
     return $this;
 }
